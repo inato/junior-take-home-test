@@ -1,10 +1,18 @@
+# Related documentation
+
+- Database: [pg](https://www.postgresql.org/docs/)
+- SQL query builder: [knex](https://knexjs.org/)
+- Web server: [express](https://expressjs.com/)
+- API: [GraphQL](https://graphql.org/learn/) and [Relay](https://relay.dev/)
+- UI: [React](https://reactjs.org/) and [styled-components](https://www.styled-components.com/)
+
 # Setup
 
 ## Pre-requisites
 
-- node
-- yarn
-- docker
+- [node](https://nodejs.org/en/download/)
+- [yarn](https://yarnpkg.com/lang/en/docs/install)
+- [docker](https://docs.docker.com/install/)
 
 ## Install
 

@@ -2,6 +2,10 @@
   "name": "junior-take-home-test",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "yarn": ">=1.7.0",
+    "node": ">=12.x"
+  },
   "dependencies": {
     "@types/cors": "^2.8.5",
     "@types/express": "^4.17.0",
@@ -47,17 +51,5 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
