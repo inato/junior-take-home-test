@@ -57,3 +57,10 @@ yarn relay
 ```sh
 yarn watch
 ```
+
+# Instructions
+
+- [ ] Clone this repository (do **not** fork it)
+- [ ] Implement the features described in the issues
+- [ ] Publish it on GitHub (or equivalent)
+- [ ] Send us the link and tell us approximatively how much time you spent on this assignment
