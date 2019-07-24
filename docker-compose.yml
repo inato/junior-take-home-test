@@ -1,6 +1,17 @@
 version: '3'
 
 services:
+  app:
+    build: . 
+    ports:
+      - 3000:3000
+      - 3001:3001
+    environment:
+      DB_HOST: db
+    links:
+      - db
+    volumes:
+    - ./:/app
   db:
     image: postgres:11.4
     ports:

@@ -37,7 +37,7 @@ yarn install
 You won't need to modify the database, but you need to start it to have some data to serve. In order to make things easier we created a docker container which hosts the database.
 
 ```sh
-docker-compose up -d
+docker-compose up -d db
 ```
 
 ### Create database schema
@@ -70,8 +70,16 @@ yarn relay
 
 # Run in watch mode
 
+## Using yarn
+
 ```sh
 yarn watch
+```
+
+## Using docker
+
+```sh
+docker-compose up -d app
 ```
 
 # Instructions
