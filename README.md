@@ -6,15 +6,6 @@ In this take-home test, you have to improve a web application made of 3 main com
 - a web server, located in the [api](https://github.com/inato/junior-take-home-test/tree/master/api) directory
 - a relational database
 
-## Related documentation
-
-- Language: [TypeScript](https://www.typescriptlang.org/)
-- Database: [pg](https://www.postgresql.org/docs/)
-- SQL query builder: [knex](https://knexjs.org/)
-- Web server: [express](https://expressjs.com/)
-- API: [GraphQL](https://graphql.org/learn/) and [Relay](https://relay.dev/)
-- UI: [React](https://reactjs.org/) and [styled-components](https://www.styled-components.com/)
-
 # Setup
 
 ## Pre-requisites
@@ -88,3 +79,12 @@ docker-compose up -d app
 - [ ] Implement the features described in the [issues](https://github.com/inato/junior-take-home-test/issues)
 - [ ] Publish it on GitHub (or equivalent)
 - [ ] Send us the link and tell us approximatively how much time you spent on this assignment
+
+## Related documentation
+
+- Language: [TypeScript](https://www.typescriptlang.org/)
+- Database: [pg](https://www.postgresql.org/docs/)
+- SQL query builder: [knex](https://knexjs.org/)
+- Web server: [express](https://expressjs.com/)
+- API: [GraphQL](https://graphql.org/learn/) and [Relay](https://relay.dev/)
+- UI: [React](https://reactjs.org/) and [styled-components](https://www.styled-components.com/)
