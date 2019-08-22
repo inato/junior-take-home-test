@@ -40,9 +40,9 @@
   "scripts": {
     "insertData": "knex seed:run",
     "migrate": "knex migrate:latest",
-    "printSchema": "ts-node -O '{\"module\": \"commonjs\"}' printSchema.ts",
+    "exportSchema": "ts-node -O '{\"module\": \"commonjs\"}' exportSchema.ts",
     "relay": "relay-compiler --src ./src --schema ./schema.graphql --language typescript",
-    "schema": "yarn printSchema && yarn relay",
+    "schema": "yarn exportSchema && yarn relay",
     "start:api": "ts-node -O '{\"module\": \"commonjs\"}' api/index.ts",
     "watch": "yarn watch:api & yarn watch:app & yarn watch:schema",
     "watch:api": "nodemon -x \"yarn start:api\" -w api -e ts",
