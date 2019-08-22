@@ -47,10 +47,11 @@ This command insert some demo data in your database to ensure you'll get some re
 yarn insertData
 ```
 
-### Print schema
+### Export schema
+This command exports the GraphQL schema to a file named `schema.graphql`
 
 ```sh
-yarn printSchema
+yarn exportSchema
 ```
 
 ### Compile queries
@@ -62,12 +63,15 @@ yarn relay
 # Run in watch mode
 
 ## Using yarn
+This command launches both the API and the front-end, and will them when one file changes.
+This command also watches for changes in the graphQL schema and will export the new schema whenever it's needed.
 
 ```sh
 yarn watch
 ```
 
 ## Using docker
+This command launches a docker container with the PostgreSQL table used by the API
 
 ```sh
 docker-compose up -d app
@@ -81,7 +85,9 @@ docker-compose up -d app
 - [ ] Send us the link and tell us approximatively how much time you spent on this assignment
 
 ## Related documentation
-
+You will find below the documentation related to each tool/framework/language used in our tech stack.
+Please not that you **do not need to read all these docs before diving in the code**. Looking at existing code and occasionally
+confirm assumptions by looking at the documentation should be enough for this take home test.
 - Language: [TypeScript](https://www.typescriptlang.org/)
 - Database: [pg](https://www.postgresql.org/docs/)
 - SQL query builder: [knex](https://knexjs.org/)
