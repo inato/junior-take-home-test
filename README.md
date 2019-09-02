@@ -63,7 +63,7 @@ yarn relay
 # Run in watch mode
 
 ## Using yarn
-This command launches both the API and the front-end, and will them when one file changes.
+This command launches both the API and the front-end, and will restart them when one file changes.
 This command also watches for changes in the graphQL schema and will export the new schema whenever it's needed.
 
 ```sh
@@ -85,6 +85,7 @@ docker-compose up -d app
 - [ ] Send us the link and tell us approximatively how much time you spent on this assignment
 
 ## Related documentation
+
 You will find below the documentation related to each tool/framework/language used in our tech stack.
 Please not that you **do not need to read all these docs before diving in the code**. Looking at existing code and occasionally
 confirm assumptions by looking at the documentation should be enough for this take home test.
