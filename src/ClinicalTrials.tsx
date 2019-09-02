@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import React, {Fragment, useCallback} from "react";
+import React, { Fragment, useCallback } from "react";
 
-import {AppQueryResponse} from "./__generated__/AppQuery.graphql";
-import {PatientsSortDirection} from "./App";
+import { AppQueryResponse } from "./__generated__/AppQuery.graphql";
+import { PatientsSortDirection } from "./App";
 
 const Table = styled.div`
   border-collapse: separate;
@@ -29,9 +29,9 @@ const HeaderCell = styled.div`
 `;
 
 const ClickableHeaderCell = styled(HeaderCell)`
-  cursor:pointer;
-  &:hover{
-    background-color: #b5b6ba;  
+  cursor: pointer;
+  &:hover {
+    background-color: #b5b6ba;
   }
 `;
 
@@ -59,15 +59,21 @@ const Cell = styled.div`
 interface Props {
   clinicalTrials: AppQueryResponse["clinicalTrials"];
   patientsSortDirection: PatientsSortDirection;
-  setPatientsSortDirection: (patientsSortDirection: PatientsSortDirection) => void;
+  setPatientsSortDirection: (
+    patientsSortDirection: PatientsSortDirection
+  ) => void;
 }
 
-const ClinicalTrials: React.FC<Props> = ({clinicalTrials, patientsSortDirection, setPatientsSortDirection}: Props) => {
+const ClinicalTrials: React.FC<Props> = ({
+  clinicalTrials,
+  patientsSortDirection,
+  setPatientsSortDirection
+}: Props) => {
   const togglePatientsSortDirection = useCallback(() => {
     if (patientsSortDirection == null) {
-      setPatientsSortDirection('asc');
-    } else if (patientsSortDirection === 'asc') {
-      setPatientsSortDirection('desc');
+      setPatientsSortDirection("asc");
+    } else if (patientsSortDirection === "asc") {
+      setPatientsSortDirection("desc");
     } else {
       setPatientsSortDirection(null);
     }
@@ -80,7 +86,9 @@ const ClinicalTrials: React.FC<Props> = ({clinicalTrials, patientsSortDirection,
         <Header>
           <HeaderCell>site</HeaderCell>
           <HeaderCell>country</HeaderCell>
-          <ClickableHeaderCell onClick={togglePatientsSortDirection}>patients</ClickableHeaderCell>
+          <ClickableHeaderCell onClick={togglePatientsSortDirection}>
+            patients{sortDirectionIndicator(patientsSortDirection)}
+          </ClickableHeaderCell>
         </Header>
         <Body>
           {clinicalTrials.map(clinicalTrial => (
@@ -94,6 +102,14 @@ const ClinicalTrials: React.FC<Props> = ({clinicalTrials, patientsSortDirection,
       </Table>
     </Fragment>
   );
+};
+
+const sortDirectionIndicator = (
+  patientsSortDirection: PatientsSortDirection
+) => {
+  if (patientsSortDirection === "asc") return "↑";
+  if (patientsSortDirection === "desc") return "↓";
+  return "";
 };
 
 export default ClinicalTrials;
