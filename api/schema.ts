@@ -2,7 +2,8 @@ import {
   GraphQLObjectType,
   GraphQLSchema,
   GraphQLNonNull,
-  GraphQLList
+  GraphQLList,
+  GraphQLString
 } from "graphql";
 import { nodeDefinitions } from "graphql-relay";
 
@@ -20,7 +21,18 @@ export const schema = new GraphQLSchema({
       node: nodeField,
       clinicalTrials: {
         type: GraphQLNonNull(GraphQLList(GraphQLNonNull(ClinicalTrialType))),
-        resolve: () => queryBuilder("clinical_trial").select()
+        args: {
+          patientsSortDirection: {
+            type: GraphQLString
+          }
+        },
+        resolve: (_, { patientsSortDirection }) => {
+          let baseQuery = queryBuilder("clinical_trial");
+          if (patientsSortDirection !== null) {
+            baseQuery = baseQuery.orderBy("patients", patientsSortDirection);
+          }
+          return baseQuery.select();
+        }
       }
     }
   })

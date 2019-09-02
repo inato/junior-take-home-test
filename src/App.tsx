@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import graphql from "babel-plugin-relay/macro";
 import styled from "styled-components";
-import { QueryRenderer } from "react-relay";
+import {QueryRenderer} from "react-relay";
 
 import ClinicalTrials from "./ClinicalTrials";
 import environment from "./environment";
-import { AppQuery } from "./__generated__/AppQuery.graphql";
+import {AppQuery} from "./__generated__/AppQuery.graphql";
 
 const Layout = styled.div`
   background: #f6f7fa;
@@ -21,32 +21,37 @@ const Content = styled.div`
   width: 100%;
 `;
 
+export type PatientsSortDirection = 'asc' | 'desc' | null;
+
 const App: React.FC = () => {
-  return (
-    <Layout>
-      <Content>
-        <QueryRenderer<AppQuery>
-          environment={environment}
-          query={graphql`
-            query AppQuery {
-              clinicalTrials {
-                country
-                patients
-                site
+  const [patientsSortDirection, setPatientsSortDirection] = useState<PatientsSortDirection>(null);
+    return (
+      <Layout>
+        <Content>
+          <QueryRenderer<AppQuery>
+            environment={environment}
+            query={graphql`
+          query AppQuery($patientsSortDirection: String)  {
+            clinicalTrials(patientsSortDirection:$patientsSortDirection) {
+              country
+              patients
+              site
+            }
+          }
+        `}
+            variables={{patientsSortDirection}}
+            render={({props}) => {
+              if (!props) {
+                return;
               }
-            }
-          `}
-          variables={{}}
-          render={({ props }) => {
-            if (!props) {
-              return;
-            }
-            return <ClinicalTrials clinicalTrials={props.clinicalTrials} />;
-          }}
-        />
-      </Content>
-    </Layout>
-  );
+              return <ClinicalTrials patientsSortDirection={patientsSortDirection}
+                                     setPatientsSortDirection={setPatientsSortDirection}
+                                     clinicalTrials={props.clinicalTrials}/>;
+            }}
+          />
+        </Content>
+      </Layout>
+    );
 };
 
 export default App;

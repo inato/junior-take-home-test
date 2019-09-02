@@ -16,5 +16,5 @@ type Query {
     """The ID of an object"""
     id: ID!
   ): Node
-  clinicalTrials: [ClinicalTrial!]!
+  clinicalTrials(patientsSortDirection: String): [ClinicalTrial!]!
 }
