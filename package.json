@@ -2,66 +2,12 @@
   "name": "junior-take-home-test",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "yarn": ">=1.7.0",
-    "node": ">=12.x"
-  },
-  "dependencies": {
-    "@types/cors": "^2.8.5",
-    "@types/express": "^4.17.0",
-    "@types/graphql": "^14.2.2",
-    "@types/graphql-relay": "^0.4.9",
-    "@types/jest": "24.0.15",
-    "@types/node": "^12.6.8",
-    "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.4",
-    "@types/react-relay": "^5.0.0",
-    "@types/relay-runtime": "^5.0.2",
-    "@types/styled-components": "^4.1.18",
-    "babel-plugin-relay": "^5.0.0",
-    "cors": "^2.8.5",
-    "express-graphql": "^0.9.0",
-    "graphql": "^14.4.2",
-    "graphql-relay": "^0.6.0",
-    "knex": "^0.19.0",
-    "nodemon": "^1.19.1",
-    "pg": "^7.11.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-relay": "^5.0.0",
-    "react-scripts": "3.0.1",
-    "relay-compiler": "^5.0.0",
-    "relay-compiler-language-typescript": "^4.3.0",
-    "relay-runtime": "^5.0.0",
-    "styled-components": "^4.3.2",
-    "ts-node": "^8.3.0",
-    "typescript": "3.5.3"
-  },
+  "packageManager": "yarn@3.4.1",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "insertData": "knex seed:run",
-    "migrate": "knex migrate:latest",
-    "exportSchema": "ts-node -O '{\"module\": \"commonjs\"}' exportSchema.ts",
-    "relay": "relay-compiler --src ./src --schema ./schema.graphql --language typescript",
-    "schema": "yarn exportSchema && yarn relay",
-    "start:api": "ts-node -O '{\"module\": \"commonjs\"}' api/index.ts",
-    "watch": "yarn watch:api & yarn watch:app & yarn watch:schema",
-    "watch:api": "nodemon -x \"yarn start:api\" -w api -e ts",
-    "watch:app": "react-scripts start",
-    "watch:schema": "nodemon -x \"yarn schema\" -w api -e ts"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "api": "yarn workspace api",
+    "app": "yarn workspace app"
   }
 }
