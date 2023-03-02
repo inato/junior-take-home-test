@@ -10,14 +10,13 @@ In this take-home test, you have to improve a web application made of 2 main com
 
 ## Pre-requisites
 
-- [git](https://git-scm.com/doc)
-- [node](https://nodejs.org/en/download/)
-- [yarn](https://yarnpkg.com/lang/en/docs/install)
+- install [node](https://nodejs.org/en/download/), the version is defined in .nvmrc
+- install [yarn](https://yarnpkg.com/getting-started/install)
 
-## Install
+## Install dependencies
 
 ```sh
-yarn install
+yarn
 ```
 
 # Run
