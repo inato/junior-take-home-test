@@ -1,6 +1,4 @@
-**/__generated__/
 .DS_Store
-/node_modules
-npm-debug.log*
+dist
 yarn-debug.log*
 yarn-error.log*
