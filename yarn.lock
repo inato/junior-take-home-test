@@ -8937,6 +8937,8 @@ __metadata:
 "junior-take-home-test@workspace:.":
   version: 0.0.0-use.local
   resolution: "junior-take-home-test@workspace:."
+  dependencies:
+    typescript: ^4.9.5
   languageName: unknown
   linkType: soft
 
