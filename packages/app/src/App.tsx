@@ -1,22 +1,8 @@
-import { useQuery, gql } from "@apollo/client";
-import React, { useState } from "react";
-import styled from "styled-components";
+import { gql, useQuery } from "@apollo/client";
+import { useState } from "react";
 
-import ClinicalTrials from "./ClinicalTrials";
-
-const Layout = styled.div`
-  background: #f6f7fa;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  width: 100%;
-`;
-
-const Content = styled.div`
-  margin-top: 48px;
-  max-width: 1300px;
-  width: 100%;
-`;
+import ClinicalTrials, { PatientsSortDirection } from "./ClinicalTrials";
+import { Content, Layout } from "./components";
 
 const clinicalTrialsQuery = gql`
   query ClinicalTrials($patientsSortDirection: String) {
@@ -27,8 +13,6 @@ const clinicalTrialsQuery = gql`
     }
   }
 `;
-
-export type PatientsSortDirection = "asc" | "desc" | null;
 
 const App: React.FC = () => {
   const [patientsSortDirection, setPatientsSortDirection] =
