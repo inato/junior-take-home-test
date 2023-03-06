@@ -9,5 +9,8 @@
   "scripts": {
     "api": "yarn workspace api",
     "app": "yarn workspace app"
+  },
+  "dependencies": {
+    "typescript": "^4.9.5"
   }
 }
