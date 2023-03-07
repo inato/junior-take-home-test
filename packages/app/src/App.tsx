@@ -3,16 +3,7 @@ import { useState } from "react";
 
 import ClinicalTrials, { PatientsSortDirection } from "./ClinicalTrials";
 import { Content, Layout } from "./components";
-
-const clinicalTrialsQuery = gql`
-  query ClinicalTrials($patientsSortDirection: String) {
-    clinicalTrials(patientsSortDirection: $patientsSortDirection) {
-      site
-      country
-      patients
-    }
-  }
-`;
+import { clinicalTrialsQuery } from "./query";
 
 const App: React.FC = () => {
   const [patientsSortDirection, setPatientsSortDirection] =

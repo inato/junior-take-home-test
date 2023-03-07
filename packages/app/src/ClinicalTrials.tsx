@@ -1,3 +1,4 @@
+import { gql } from "@apollo/client";
 import React, { Fragment, useCallback } from "react";
 import {
   Table,
@@ -10,6 +11,14 @@ import {
 } from "./components";
 
 export type PatientsSortDirection = "asc" | "desc" | null;
+
+export const clinicalTrialsFragment = gql`
+  fragment ClinicalTrialsFragment on ClinicalTrial {
+    site
+    country
+    patients
+  }
+`;
 
 interface Props {
   clinicalTrials: Array<any>;
