@@ -5,7 +5,6 @@ In this take-home test, you have to improve a web application made of 2 main com
 - a front-end application
 - an api server
 
-
 # Setup
 
 ## Pre-requisites
@@ -38,7 +37,7 @@ yarn app start
 - [ ] Clone this repository (do **not** fork it)
 - [ ] Implement the features described in the [issues](https://github.com/inato/junior-take-home-test/issues)
 - [ ] Publish it on GitHub (or equivalent)
-- [ ] Send us the link and tell us approximatively how much time you spent on this assignment
+- [ ] Send us the link and tell us approximately how much time you spent on this assignment
 
 ## Related documentation
 
