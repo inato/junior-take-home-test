@@ -39,6 +39,8 @@ yarn app start
 - [ ] Publish it on GitHub (or equivalent)
 - [ ] Send us the link and tell us approximately how much time you spent on this assignment
 
+You should not spend more than 5 hours on this test. We value the quality of the end result, not how much time you have spent on it.
+
 ## Related documentation
 
 You will find below the documentation related to each tool/framework/language used in our tech stack.
